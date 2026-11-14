@@ -31,10 +31,12 @@ One model, `hairdeck`, on `mesh.generate_part`, in one lane (`fp32`):
 - **`seed`**: the same picture, box, body and seed give the same GLB, byte for byte, on the same Mac and build;
 - **the result**: a hair item GLB in the body's coordinates — a skinned mesh, a small colour texture, a head bone named
   as the body's, chain bones, springs. Gaea stamps and previews it and never moves or rescales it. Merging it into
-  the avatar is the client's step (Item Studio's `mergeVrm`).
+  the avatar is the client's step: Item Studio's `mergeVrm` (`web/fitting/vrmMerge.js` in `xocialize-code/vrmx-studio`,
+  from `9123c46`), which carries the item's spring bones into the `.vrm`. Older copies of that file drop them.
 
-About a second a hairstyle once loaded. HairDeck is charged 5.5 GB (measured: 4.4 GB peak in MLX, 5.2 GB in the
-process), and BiRefNet, prepared with it, its own lane's charge on top.
+About a second a hairstyle once loaded. The lane is charged 11.0 GB: HairDeck's 5.5 GB (measured: 4.4 GB peak in MLX,
+5.2 GB in the process) with BiRefNet's lane folded in (GaeaPluginKit 0.13.1, `charged: true`): 3.8 GB held and 7.2 GB
+peak. Gaea measured 10.3 to 10.4 GB held after an opaque picture.
 
 ## Weights
 

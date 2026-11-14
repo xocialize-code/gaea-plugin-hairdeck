@@ -13,9 +13,9 @@ let package = Package(
     platforms: [.macOS(.v26)], // mlx-engine-swift's MLXToolKit requires macOS 26
     dependencies: [
         kitPath.map { .package(path: $0) }
-            ?? .package(url: "https://github.com/xocialize-code/gaea-plugin-kit.git", from: "0.13.0"),
+            ?? .package(url: "https://github.com/xocialize-code/gaea-plugin-kit.git", from: "0.13.1"),
         hairdeckPath.map { .package(path: $0) }
-            ?? .package(url: "https://github.com/xocialize/mlx-hairdeck-swift.git", from: "0.1.0"),
+            ?? .package(url: "https://github.com/xocialize/mlx-hairdeck-swift.git", from: "0.2.1"),
         .package(url: "https://github.com/xocialize/mlx-birefnet-swift.git", from: "0.4.0"),
         .package(url: "https://github.com/xocialize/mlx-engine-swift.git", exact: "0.78.0"),
     ],
