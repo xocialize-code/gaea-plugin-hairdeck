@@ -7,8 +7,7 @@ anime-style hair for an avatar from one character picture, on MES `mesh.generate
 [mlx-birefnet-swift](https://github.com/xocialize/mlx-birefnet-swift) cutting the character out of an opaque picture.
 
 **Status: 0.1.0 built and checked outside Gaea; not released.** No Gaea serves `mesh.generate_part` yet (it waits for
-MESKit, AB-A-0280, and Gaea 1.7.0), and the
-weights repo `xocialize/hairdeck-mlx` and the port's repo are still private.
+a released Gaea 1.7.0).
 
 **Built with DINOv3.** HairDeck's image conditioner is Meta's DINOv3, under the DINOv3 License, which asks for those
 words wherever it ships. The offer carries them as the licence's `attribution`; Gaea writes them into every item
