@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/xocialize/mlx-hairdeck-swift.git",
       "state" : {
-        "revision" : "b6c89af0a523babc88bdb88917b1f55a65080092",
-        "version" : "0.1.1"
+        "revision" : "62a5b6d63ee18c599679d2b3752e2d94f9d0f310",
+        "version" : "0.1.2"
       }
     },
     {
