@@ -24,7 +24,6 @@ B=$ROOT/dist/$NAME.gaeaplugin
 # face as shares of it, and the body. No body ships with the repo: name a .vrm or rigged .glb.
 CHECK_IMAGE=${CHECK_IMAGE:-$ROOT/Tests/Fixtures/girl.png}
 CHECK_BOX=${CHECK_BOX:-'{"x":0.048,"y":0.03,"width":0.934,"height":0.941}'}
-: ${CHECK_BODY:?set CHECK_BODY to a .vrm or rigged .glb}
 PARAMS=${CHECK_PARAMS:-"{\"subject_box\":$CHECK_BOX,\"part\":\"hair\",\"physics\":true,\"texture\":\"atlas\",\"background\":\"${CHECK_BACKGROUND:-alpha}\"}"}
 # The weights: no download in a check. The models root holds HairDeck's, DINOv3's and BiRefNet's snapshots on this Mac.
 MODELS=${CHECK_MODELS_ROOT:-/Volumes/DEV_VOL1/Models}
@@ -60,6 +59,7 @@ if [[ $gpu == no ]]; then
   exit 0
 fi
 
+: ${CHECK_BODY:?set CHECK_BODY to a .vrm or rigged .glb}
 step "drive $NAME.gaeaplugin over GPP"
 $TOOLS/gaea-plugin-check $B --operation mesh.generate_part --model hairdeck --lane fp32 --params $PARAMS --seed 42 \
   --input "image=$CHECK_IMAGE" --input "body=$CHECK_BODY" \
