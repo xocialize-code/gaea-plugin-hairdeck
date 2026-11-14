@@ -1,0 +1,123 @@
+{
+  "originHash" : "ccd7c167832b5c2d880fab2dbf89b5cab8719134b3c232861461d35f089804ea",
+  "pins" : [
+    {
+      "identity" : "designscaffold",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/xocialize/DesignScaffold",
+      "state" : {
+        "revision" : "4e44017bbfb1c445aabbe85687f0a1a00ba193f2",
+        "version" : "0.26.0"
+      }
+    },
+    {
+      "identity" : "eventsource",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattt/EventSource.git",
+      "state" : {
+        "revision" : "bb4b61273b5a976bb571859c17f903ebc3439df1",
+        "version" : "1.6.0"
+      }
+    },
+    {
+      "identity" : "gaea-plugin-kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/xocialize-code/gaea-plugin-kit.git",
+      "state" : {
+        "revision" : "ee04fa5a52c20dc727a65b1a8e74d3baa2df6b37",
+        "version" : "0.13.0"
+      }
+    },
+    {
+      "identity" : "mlx-birefnet-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/xocialize/mlx-birefnet-swift.git",
+      "state" : {
+        "revision" : "9f287b3ee640d18784f68d37237c91c07c47177b",
+        "version" : "0.4.2"
+      }
+    },
+    {
+      "identity" : "mlx-engine-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/xocialize/mlx-engine-swift.git",
+      "state" : {
+        "revision" : "84c1759986c2881c451aefad924d554c9487b4f5",
+        "version" : "0.78.0"
+      }
+    },
+    {
+      "identity" : "mlx-hairdeck-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/xocialize/mlx-hairdeck-swift.git",
+      "state" : {
+        "revision" : "2d46a7758284b75ecb2b32cb193c0cec411e20a0",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "mlx-profiling",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/xocialize/mlx-profiling.git",
+      "state" : {
+        "revision" : "a1cee71340e28253b1796c655ac861756c87452d",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "mlx-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/xocialize/mlx-swift",
+      "state" : {
+        "revision" : "7ede4fd6d05f63305c1c0ebf4f8c1909a637c574",
+        "version" : "0.33.0"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser.git",
+      "state" : {
+        "revision" : "6a52f3251125d74daf04fcbd5e6f08a75d074382",
+        "version" : "1.8.2"
+      }
+    },
+    {
+      "identity" : "swift-asn1",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-asn1.git",
+      "state" : {
+        "revision" : "917b472dbe53ba699cbb0495f9a95a084bc6364d",
+        "version" : "1.7.4"
+      }
+    },
+    {
+      "identity" : "swift-crypto",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-crypto.git",
+      "state" : {
+        "revision" : "da9d28d69ebe3894b18376c8f2395c2f37b8448f",
+        "version" : "4.5.2"
+      }
+    },
+    {
+      "identity" : "swift-huggingface",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/huggingface/swift-huggingface.git",
+      "state" : {
+        "revision" : "f0a0cb43cb1b402d2bbf6fb10d8981328c449c48",
+        "version" : "0.13.0"
+      }
+    },
+    {
+      "identity" : "swift-numerics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-numerics",
+      "state" : {
+        "revision" : "0c0290ff6b24942dadb83a929ffaaa1481df04a2",
+        "version" : "1.1.1"
+      }
+    }
+  ],
+  "version" : 3
+}

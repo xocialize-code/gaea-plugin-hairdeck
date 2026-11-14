@@ -1,0 +1,6 @@
+.build/
+.swiftpm/
+dist/
+*.p12
+.DS_Store
+out/
