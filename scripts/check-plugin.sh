@@ -20,9 +20,11 @@ cd $ROOT
 NAME=${PLUGIN_BUNDLE_NAME:-hairdeck}
 SPEC=${GAEA_SPEC_ROOT:-$ROOT/../gaea-mes-media-server}
 B=$ROOT/dist/$NAME.gaeaplugin
-# The picture, the box around its head as shares of it ({"x","y","width","height"}), and the body: no fixtures ship
-# with the repo yet, so name them. background: alpha for a cut-out picture, remove for an opaque one.
-: ${CHECK_IMAGE:?set CHECK_IMAGE to a character picture} ${CHECK_BODY:?set CHECK_BODY to a .vrm or rigged .glb} ${CHECK_BOX:?set CHECK_BOX to the head box, e.g. '{"x":0.1,"y":0.05,"width":0.8,"height":0.8}'}
+# The picture (the repo's own: an original character, cut out, so background alpha), the box around its hair and
+# face as shares of it, and the body. No body ships with the repo: name a .vrm or rigged .glb.
+CHECK_IMAGE=${CHECK_IMAGE:-$ROOT/Tests/Fixtures/girl.png}
+CHECK_BOX=${CHECK_BOX:-'{"x":0.048,"y":0.03,"width":0.934,"height":0.941}'}
+: ${CHECK_BODY:?set CHECK_BODY to a .vrm or rigged .glb}
 PARAMS=${CHECK_PARAMS:-"{\"subject_box\":$CHECK_BOX,\"part\":\"hair\",\"physics\":true,\"texture\":\"atlas\",\"background\":\"${CHECK_BACKGROUND:-alpha}\"}"}
 # The weights: no download in a check. The models root holds HairDeck's, DINOv3's and BiRefNet's snapshots on this Mac.
 MODELS=${CHECK_MODELS_ROOT:-/Volumes/DEV_VOL1/Models}
