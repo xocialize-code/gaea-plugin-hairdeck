@@ -13,11 +13,16 @@ let package = Package(
     platforms: [.macOS(.v26)], // mlx-engine-swift's MLXToolKit requires macOS 26
     dependencies: [
         kitPath.map { .package(path: $0) }
-            ?? .package(url: "https://github.com/xocialize-code/gaea-plugin-kit.git", from: "0.13.1"),
+            ?? .package(url: "https://github.com/xocialize-code/gaea-plugin-kit.git", from: "0.14.1"), // 0.14.1 on: the manifest names the engine actually linked
         hairdeckPath.map { .package(path: $0) }
-            ?? .package(url: "https://github.com/xocialize/mlx-hairdeck-swift.git", from: "0.2.1"),
+            ?? .package(url: "https://github.com/xocialize/mlx-hairdeck-swift.git", from: "0.2.2"),
         .package(url: "https://github.com/xocialize/mlx-birefnet-swift.git", from: "0.4.0"),
-        .package(url: "https://github.com/xocialize/mlx-engine-swift.git", exact: "0.78.0"),
+        // mlx-engine-swift 0.82.1, the first on the fleet's mlx-swift 0.33.1. Pinned exactly, as the fleet's plugins do: a
+        // later 0.x could add fields GPP v1's closed schema doesn't carry, or a contract Gaea can't decode.
+        .package(url: "https://github.com/xocialize/mlx-engine-swift.git", exact: "0.82.1"),
+        // The fleet's mlx-swift fork: 0.33.1 is upstream 0.33.0 with the split-head attention routes off (AB-D-0264).
+        // The fork's own 0.33.0 tag is unpatched upstream, which 0.1.0 and 0.1.1 shipped on.
+        .package(url: "https://github.com/xocialize/mlx-swift", exact: "0.33.1"),
     ],
     targets: [
         .target(

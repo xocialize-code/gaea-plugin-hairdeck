@@ -8,8 +8,8 @@
 # the weights repo is private), GOLDEN_SEED (default 0), GAEA_SPEC_ROOT (default ../gaea-mes-media-server, for
 # tools/gpp-run.py), GAEA_PLUGIN_KIT_PATH. Run scripts/build-plugin.sh first.
 #
-# gpp-run.py gives a worker an 8 GB ceiling, and HairDeck with BiRefNet is charged 8.1 GB, so this runs a copy of it
-# with a 32 GB ceiling.
+# gpp-run.py gives a worker an 8 GB ceiling by default, and HairDeck with BiRefNet is charged more, so this asks it
+# for 32 GB (GPP_RUN_BUDGET_BYTES).
 set -euo pipefail
 ROOT=${0:A:h:h}
 cd $ROOT
@@ -20,10 +20,9 @@ MODELS=${GOLDEN_MODELS_ROOT:-/Volumes/DEV_VOL1/Models}
 SEED=${GOLDEN_SEED:-0}
 mkdir -p $OUT/work
 [[ -e $OUT/work/models ]] || ln -s $MODELS $OUT/work/models
-sed 's/"ceilingBytes": 8_000_000_000/"ceilingBytes": 32_000_000_000/' $SPEC/tools/gpp-run.py > $OUT/gpp-run.py
 PARAMS="{\"subject_box\":$GOLDEN_BOX,\"part\":\"hair\",\"physics\":true,\"texture\":\"atlas\",\"background\":\"alpha\",\"quality\":\"standard\"}"
-GPP_RUN_INPUTS="{\"image\": \"${GOLDEN_IMAGE:A}\", \"body\": \"${GOLDEN_BODY:A}\"}" \
-  python3 $OUT/gpp-run.py dist/hairdeck.gaeaplugin $OUT/work hairdeck fp32 mesh.generate_part $PARAMS '{}' $SEED > $OUT/worker.json
+GPP_RUN_BUDGET_BYTES=32000000000 GPP_RUN_INPUTS="{\"image\": \"${GOLDEN_IMAGE:A}\", \"body\": \"${GOLDEN_BODY:A}\"}" \
+  python3 $SPEC/tools/gpp-run.py dist/hairdeck.gaeaplugin $OUT/work hairdeck fp32 mesh.generate_part $PARAMS '{}' $SEED > $OUT/worker.json
 # the box in pixels as GaeaPluginKit makes it: left and top rounded down, right and bottom up
 BOX=$(python3 - $GOLDEN_IMAGE $GOLDEN_BOX <<'PY'
 import json, math, struct, sys

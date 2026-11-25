@@ -124,7 +124,7 @@ let offer = PluginManifest.Offer(
     defaults: [:])
 
 public let hairdeckPlugin = GaeaPluginDefinition(
-    id: "com.xocialize.gaea.hairdeck", version: "0.1.1", minGaea: "1.7.0", team: "CFZS6RXUCP",
+    id: "com.xocialize.gaea.hairdeck", version: "0.1.2", minGaea: "1.7.0", team: "CFZS6RXUCP",
     repo: "https://github.com/xocialize-code/gaea-plugin-hairdeck", title: "HairDeck",
     summary: "HairDeck: hair for an avatar from one character picture (MES mesh.generate_part) — a skinned GLB item with per-card colours and spring bones, placed on the body's head. Built with DINOv3.",
     license: "Apache-2.0", executable: "gaea-hairdeck-worker",
